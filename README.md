@@ -1,1 +1,1 @@
-# minto-tours
+# yavora-tours
