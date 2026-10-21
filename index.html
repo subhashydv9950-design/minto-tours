@@ -585,15 +585,45 @@
     </style>
 </head>
 <body>
-      <div class="top-bar">
-        <div class="top-bar-contact">
-            <span><i class="fa-brands fa-whatsapp"></i> +91 9352149065 (WhatsApp Chat Only)</span>
-            <span><i class="fa-regular fa-envelope"></i> yahu9950@gmail.com</span>
-        </div>
-        <div class="language-selector">
-            <div id="google_translate_element"></div>
-        </div>
-      </div>
+              <div class="language-selector">
+            <select id="languageSelect" onchange="changeWebsiteLanguage(this.value)">
+                <option value="en">English (US/UK - Default)</option>
+                <option value="hi">हिंदी (Hindi - India)</option>
+                <option value="es">Español (Spanish - Spain/LatAm)</option>
+                <option value="fr">Français (French - France)</option>
+                <option value="fr-CA">Français (Canadian French)</option>
+                <option value="de">Deutsch (German - Germany)</option>
+                <option value="it">Italiano (Italian - Italy)</option>
+                <option value="ja">日本語 (Japanese - Japan)</option>
+                <option value="ko">한국어 (Korean - South Korea)</option>
+                <option value="zh-CN">中文 (Chinese - Simplified / China)</option>
+                <option value="zh-TW">繁體中文 (Chinese - Traditional)</option>
+                <option value="id">Bahasa Indonesia (Indonesian)</option>
+                <option value="fil">Filipino (Tagalog - Philippines)</option>
+                <option value="pt-BR">Português (Portuguese - Brazil)</option>
+                <option value="pt-PT">Português (Portuguese - Portugal)</option>
+                <option value="nl">Nederlands (Dutch - Belgium / Netherlands)</option>
+                <option value="ru">Русский (Russian)</option>
+                <option value="ar">العربية (Arabic)</option>
+                <option value="tr">Türkçe (Turkish)</option>
+                <option value="pl">Polski (Polish - Poland)</option>
+                <option value="sv">Svenska (Swedish - Sweden)</option>
+                <option value="da">Dansk (Danish - Denmark)</option>
+                <option value="fi">Suomi (Finnish - Finland)</option>
+                <option value="no">Norsk (Norwegian)</option>
+                <option value="el">Ελληνικά (Greek)</option>
+                <option value="cs">Čeština (Czech)</option>
+                <option value="hu">Magyar (Hungarian)</option>
+                <option value="ro">Română (Romanian)</option>
+                <option value="uk">Українська (Ukrainian)</option>
+                <option value="vi">Tiếng Việt (Vietnamese)</option>
+                <option value="th">ไทย (Thai)</option>
+                <option value="ms">Bahasa Melayu (Malay)</option>
+                <option value="he">עברית (Hebrew)</option>
+                <option value="fa">فارسی (Persian)</option>
+                <option value="ur">اردو (Urdu)</option>
+            </select>
+              </div>
     
     <header>
         <div class="logo">
@@ -1131,17 +1161,35 @@
             }
         }
     </script>
-    <!-- Google Translate Script -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,hi,de,es,fr,it,ja,ko,zh-CN,ur,fa',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function changeWebsiteLanguage(lang) {
+            var selectField = document.querySelector(".goog-te-combo");
+            if (selectField) {
+                selectField.value = lang;
+                selectField.dispatchEvent(new Event('change'));
+            } else {
+                setTimeout(function() {
+                    var retryField = document.querySelector(".goog-te-combo");
+                    if (retryField) {
+                        retryField.value = lang;
+                        retryField.dispatchEvent(new Event('change'));
+                    }
+                }, 1000);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
 </body>
 </html>
