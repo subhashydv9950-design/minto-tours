@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minto Tour & Travels Agency | Pan-India & Global Tours</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #d4af37;
+            --accent-hover: #b38f27;
+            --light: #f8fafc;
+            --text-dark: #334155;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar-contact span {
+            margin-right: 20px;
+        }
+
+        .top-bar-contact i {
+            color: var(--accent);
+            margin-right: 5px;
+        }
+
+        .language-selector select {
+            background: #1e293b;
+            color: var(--white);
+            border: 1px solid var(--accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo h1 span {
+            color: var(--accent);
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: #64748b;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            background-color: var(--accent);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .hero h2 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .search-trigger-box {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            gap: 15px;
+            max-width: 900px;
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-group {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+        }
+
+        .search-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .search-group select, .search-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .search-btn {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .search-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        .tiers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tier-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .tier-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .tier-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .tier-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .tier-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+
+        .tier-card ul li {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .tier-card ul li i {
+            font-size: 1rem;
+            color: #10b981;
+            margin-right: 8px;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dest-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .dest-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .dest-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .dest-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
+            color: var(--white);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .dest-info h4 {
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .inquiry-section {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 60px 5%;
+            margin-top: 60px;
+        }
+
+        .inquiry-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .inquiry-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        .inquiry-box p {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            color: #cbd5e1;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: var(--white);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .submit-btn {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        #success-notice {
+            display: none;
+            background: #065f46;
+            color: #d1fae5;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        .about-section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #64748b;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .leader-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .leader-card h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .leader-card span {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        footer {
+            background-color: #0b1120;
+            color: #94a3b8;
+            padding: 50px 5% 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .footer-col p, .footer-col ul li a {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        @media(max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-contact">
+            <span><i class="fa-brands fa-whatsapp"></i> +91 9352149065 (WhatsApp Chat Only)</span>
+            <span><i class="fa-regular fa-envelope"></i> yahu9950@gmail.com</span>
+        </div>
+        <div class="language-selector">
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="en">English (Default)</option>
+                <option value="hi">हिंदी (Hindi)</option>
+                <option value="de">Deutsch (German)</option>
+                <option value="es">Español (Spanish)</option>
+                <option value="fr">Français (French)</option>
+                <option value="it">Italiano (Italian)</option>
+                <option value="ja">日本語 (Japanese)</option>
+                <option value="ko">한국어 (Korean)</option>
+                <option value="zh-CN">中文 (Chinese)</option>
+                <option value="ur">اردو (Urdu)</option>
+                <option value="fa">فارسی (Persian)</option>
+            </select>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <h1>Minto <span>Tours</span></h1>
+            <p>Jaipur & Gurugram | Pan-India & Global Experts</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tiers">Packages</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#inquiry" class="nav-btn">Book / Inquiry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Discover Incredible India with <span>Minto Tours</span></h2>
+        <p>Specialized luxury guided tours and custom setups across Kashmir, Himachal, Goa, Kerala, Agra, Ayodhya, and all over India for International & Domestic travelers.</p>
+        
+        <div class="search-trigger-box">
+            <div class="search-group">
+                <label>Starting Hub</label>
+                <select id="startHub">
+                    <option>Jaipur (Main Hub)</option>
+                    <option>Gurugram (Main Hub)</option>
+                    <option>Other City</option>
+                </select>
+            </div>
+            <div class="search-group">
+                <label>Preferred Tier</label>
+                <select id="searchTier">
+                    <option>Luxury VIP Tour</option>
+                    <option>Medium / Comfort Tour</option>
+                    <option>Standard / Normal Tour</option>
+                </select>
+            </div>
+            <button class="search-btn" onclick="scrollToInquiry()">Plan My Trip</button>
+        </div>
+    </section>
+
+    <section id="tiers" class="section-title">
+        <h2>Choose Your Travel Experience</h2>
+        <p>Tailored options designed for global tourists and discerning travelers</p>
+    </section>
+
+    <div class="tiers-container">
+        <div class="tier-card">
+            <i class="fa-solid fa-route"></i>
+            <h3>Standard Tour</h3>
+            <p>Budget-friendly & economical exploration across desired Indian cities.</p>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Standard Hotels & Stays</li>
+                <li><i class="fa-solid fa-check"></i> Shared/Public Transport options</li>
+                <li><i class="fa-solid fa-check"></i> Expert Local Guide Included</li>
+            </ul>
+            <a href="#inquiry" class="nav-btn" style="display:inline-block; margin-top:10px;">Select Standard</a>
+        </div>
+
+        <div class="tier-card">
+            <i class="fa-solid fa-star"></i>
+            <h3>Medium Tour</h3>
+            <p>Comfortable, balanced itinerary with quality hospitality and private transit.</p>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> 3/4 Star Comfortable Hotels</li>
+                <li><i class="fa-solid fa-check"></i> Private AC Cab & Driver</li>
+                <li><i class="fa-solid fa-check"></i> Dedicated Tourist Guide</li>
+            </ul>
+            <a href="#inquiry" class="nav-btn" style="display:inline-block; margin-top:10px;">Select Medium</a>
+        </div>
+
+        <div class="tier-card" style="border-top-color: #f59e0b;">
+            <i class="fa-solid fa-crown" style="color: #f59e0b;"></i>
+            <h3>Luxury VIP Tour</h3>
+            <p>An opulent, royal experience with 5-star accommodation and elite service.</p>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> 5-Star Luxury Heritage Hotels</li>
+                <li><i class="fa-solid fa-check"></i> Premium Luxury Cars / SUVs</li>
+                <li><i class="fa-solid fa-check"></i> VIP Personal Escort & Guide</li>
+            </ul>
+            <a href="#inquiry" class="nav-btn" style="background-color: #f59e0b; display:inline-block; margin-top:10px;">Select Luxury</a>
+        </div>
+    </div>
+
+    <section id="destinations" class="section-title">
+        <h2>Popular Pan-India Destinations</h2>
+        <p>Covering Kashmir, Himachal, Agra, Rajasthan, Goa, Kerala & More</p>
+    </section>
+
+    <div class="destinations-grid">
+        <div class="dest-card">
+            <img src="https://images.unsplash.com/photo-1598091383028-de18c5ea423b?auto=format&fit=crop&w=600&q=80" alt="Jaipur">
+            <div class="dest-info">
+                <h4>Jaipur (Rajasthan)</h4>
+                <p>Palaces & Forts Heritage</p>
+            </div>
+        </div>
+        <div class="dest-card">
+            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80" alt="Agra">
+            <div class="dest-info">
+                <h4>Agra (Taj Mahal)</h4>
+                <p>Wonder of the World</p>
+            </div>
+        </div>
+        <div class="dest-card">
+            <img src="https://images.unsplash.com/photo-1595815771615-be95a5ad7c30?auto=format&fit=crop&w=600&q=80" alt="Kashmir">
+            <div class="dest-info">
+                <h4>Kashmir & Himachal</h4>
+                <p>Snow Peaks & Valleys</p>
+            </div>
+        </div>
+        <div class="dest-card">
+            <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80" alt="Kerala">
+            <div class="dest-info">
+                <h4>Kerala Backwaters</h4>
+                <p>Houseboats & Tropical Nature</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="about-section">
+        <h2>About Minto Tour & Travels Agency</h2>
+        <p>Headquartered in Jaipur with operational roots in Gurugram, we specialize in offering world-class Pan-India tourism experiences, specifically tailored for international travelers and connoisseurs of Indian heritage.</p>
+        
+        <div class="leadership-grid">
+            <div class="leader-card">
+                <h4>Subhash Yadav</h4>
+                <span>Founder</span>
+            </div>
+            <div class="leader-card">
+                <h4>Dharmesh Yadav</h4>
+                <span>Director</span>
+            </div>
+            <div class="leader-card">
+                <h4>Mohit Yadav</h4>
+                <span>Director</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="inquiry" class="inquiry-section">
+        <div class="inquiry-box">
+            <h3>Advance Booking & Tour Inquiry</h3>
+            <p>Fill out your details below. Once submitted, wait for our response. Your inquiry will also be sent directly to our WhatsApp & Email!</p>
+            
+            <form id="inquiryForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Your Full Name *</label>
+                        <input type="text" id="name" required placeholder="e.g. John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label>Your Country of Origin *</label>
+                        <input type="text" id="country" required placeholder="e.g. Germany / USA">
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp / Phone Number *</label>
+                        <input type="text" id="phone" required placeholder="With country code">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" id="email" required placeholder="yahu9950@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Duration of Tour (Days) *</label>
+                        <input type="number" id="days" required placeholder="e.g. 7 Days">
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Guests *</label>
+                        <input type="number" id="guests" required placeholder="e.g. 2 People">
+                    </div>
+                    <div class="form-group">
+                        <label>Service Requirement *</label>
+                        <select id="serviceType">
+                            <option>Full Setup (Hotels + Transport + Guide)</option>
+                            <option>Guide Service Only</option>
+                            <option>Custom Itinerary Setup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Package Tier *</label>
+                        <select id="packageTier">
+                            <option>Luxury VIP Tour</option>
+                            <option>Medium / Comfort Tour</option>
+                            <option>Standard / Normal Tour</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Desired Destinations / Locations in India *</label>
+                    <textarea id="locations" required placeholder="Mention places you want to visit (e.g. Jaipur, Agra, Kashmir, Goa)"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Inquiry & Connect via WhatsApp</button>
+            </form>
+
+            <div id="success-notice">
+                Inquiry Submitted Successfully! Please wait for our response. Redirecting to WhatsApp...
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Minto Tour & Travels</h3>
+                <p>Your premier partner for unforgettable Pan-India journeys, starting from Jaipur and Gurugram.</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +91 9352149065</p>
+                <p><i class="fa-regular fa-envelope"></i> yahu9950@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tiers">Tour Tiers</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Leadership</h3>
+                <p>Founder: Subhash Yadav</p>
+                <p>Directors: Dharmesh Yadav & Mohit Yadav</p>
+                <p>Head Office: Jaipur & Gurugram, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Minto Tour & Travels Agency. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        function scrollToInquiry() {
+            document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('name').value;
+            let country = document.getElementById('country').value;
+            let phone = document.getElementById('phone').value;
+            let email = document.getElementById('email').value;
+            let days = document.getElementById('days').value;
+            let guests = document.getElementById('guests').value;
+            let service = document.getElementById('serviceType').value;
+            let tier = document.getElementById('packageTier').value;
+            let locations = document.getElementById('locations').value;
+
+            let notice = document.getElementById('success-notice');
+            notice.style.display = 'block';
+
+            let waMessage = `*New Tour Inquiry - Minto Tours*%0A%0A` +
+                            `*Name:* ${name}%0A` +
+                            `*Country:* ${country}%0A` +
+                            `*Phone:* ${phone}%0A` +
+                            `*Email:* ${email}%0A` +
+                            `*Duration:* ${days} Days%0A` +
+                            `*Guests:* ${guests}%0A` +
+                            `*Service:* ${service}%0A` +
+                            `*Tier:* ${tier}%0A` +
+                            `*Locations:* ${locations}`;
+
+            setTimeout(() => {
+                window.open(`https://wa.me/919352149065?text=${waMessage}`, '_blank');
+            }, 1500);
+        }
+
+        function changeLanguage() {
+            let select = document.getElementById('languageSelect');
+            let lang = select.value;
+            if(lang !== 'en') {
+                alert("Language switching enabled. For full instantaneous translation across all global languages, ensure you view this page via a browser with Google Translate enabled.");
+            }
+        }
+    </script>
+</body>
+</html>
