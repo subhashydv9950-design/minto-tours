@@ -77,7 +77,6 @@
             padding: 15px 5%;
         }
 
-        /* Single Clean Logo Styling */
         .logo {
             display: flex;
             align-items: center;
@@ -336,14 +335,14 @@
             font-family: 'Playfair Display', serif;
         }
 
-        .inquiry-section {
+        .inquiry-section, .review-form-section {
             background-color: var(--primary);
             color: var(--white);
             padding: 60px 5%;
             margin-top: 60px;
         }
 
-        .inquiry-box {
+        .inquiry-box, .review-form-box {
             max-width: 800px;
             margin: 0 auto;
             background: #1e293b;
@@ -353,7 +352,7 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .inquiry-box h3 {
+        .inquiry-box h3, .review-form-box h3 {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             margin-bottom: 10px;
@@ -361,7 +360,7 @@
             color: var(--accent);
         }
 
-        .inquiry-box p {
+        .inquiry-box p, .review-form-box p {
             text-align: center;
             font-size: 0.9rem;
             color: #94a3b8;
@@ -418,7 +417,7 @@
             background-color: var(--accent-hover);
         }
 
-        #success-notice {
+        #success-notice, #review-notice {
             display: none;
             background: #065f46;
             color: #d1fae5;
@@ -475,6 +474,57 @@
             color: var(--accent);
             font-weight: 600;
             text-transform: uppercase;
+        }
+
+        /* Testimonials Styles */
+        .reviews-section {
+            background-color: #f1f5f9;
+            padding: 70px 5%;
+            text-align: center;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        .review-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: relative;
+            border-top: 4px solid var(--accent);
+        }
+
+        .review-card .stars {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .review-card p {
+            font-size: 0.95rem;
+            color: #334155;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .review-card h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .review-card span {
+            font-size: 0.8rem;
+            color: #64748b;
         }
 
         footer {
@@ -560,7 +610,6 @@
 
     <header>
         <div class="logo">
-            <!-- Single Clean Air Travel Logo -->
             <svg width="60" height="40" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
               <ellipse cx="100" cy="70" rx="85" ry="35" stroke="#C5A059" stroke-width="2.5" transform="rotate(-20 100 70)" stroke-dasharray="8 4"/>
               <path d="M40 90C40 90 85 75 100 45C115 75 160 90 160 90C160 90 120 78 100 60C80 78 40 90 40 90Z" fill="#0A2E54"/>
@@ -577,6 +626,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#tiers">Packages</a></li>
                 <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#inquiry" class="nav-btn">Book / Inquiry</a></li>
             </ul>
@@ -670,7 +720,6 @@
                 <p>Wonder of the World</p>
             </div>
         </div>
-        <!-- 100% Working Kashmir Image Link -->
         <div class="dest-card">
             <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=600&q=80" alt="Kashmir">
             <div class="dest-info">
@@ -686,6 +735,97 @@
             </div>
         </div>
     </div>
+
+    <!-- Live Public Client Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.3rem; color: var(--primary); margin-bottom: 10px;">
+                Client Journeys & Experiences
+            </h2>
+            <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 40px;">
+                Read what international and domestic travelers say about their luxury tours with Yavora
+            </p>
+
+            <!-- Reviews Container where existing and new reviews appear -->
+            <div id="reviewsContainer" class="reviews-grid">
+                <!-- Review Card 1 -->
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Yavora arranged an absolute royal tour for us across Jaipur and Agra. The heritage hotels and private cab service were top-notch. Truly a classic journey!"</p>
+                    <h4>Marcus & Elena</h4>
+                    <span>Travelers from Germany</span>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"The Kashmir trip organized by Yavora was breathtaking. From luxury houseboats to expert guides, everything was managed with absolute perfection."</p>
+                    <h4>Dr. Rajesh Sharma</h4>
+                    <span>Traveler from Mumbai</span>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Gurugram and Jaipur roots mean local expertise with global standards. Their VIP tour package exceeded all our expectations."</p>
+                    <h4>Sophie Laurent</h4>
+                    <span>Traveler from France</span>
+                </div>
+            </div>
+
+            <a href="#writeReviewBox" class="nav-btn" style="display: inline-block; text-decoration: none; padding: 12px 30px;">
+                <i class="fa-solid fa-pen-nib" style="margin-right: 8px;"></i> Write a Review
+            </a>
+        </div>
+    </section>
+
+    <!-- Write a Review Form Section -->
+    <section id="writeReviewBox" class="review-form-section">
+        <div class="review-form-box">
+            <h3>Share Your Travel Experience</h3>
+            <p>Your review will be instantly published on the website for everyone to see!</p>
+            
+            <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Your Full Name *</label>
+                        <input type="text" id="reviewName" required placeholder="e.g. David Warner">
+                    </div>
+                    <div class="form-group">
+                        <label>From / Country *</label>
+                        <input type="text" id="reviewCountry" required placeholder="e.g. Australia / Delhi">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Your Review / Experience *</label>
+                    <textarea id="reviewText" required placeholder="Write about your journey with Yavora..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Publish Review on Website</button>
+            </form>
+
+            <div id="review-notice">
+                Thank you! Your review has been successfully published on the website.
+            </div>
+        </div>
+    </section>
 
     <section id="about" class="about-section">
         <h2>About Yavora Agency</h2>
@@ -769,77 +909,6 @@
     </section>
 
     <footer>
-            <!-- Yavora Testimonials & Reviews Section Start -->
-    <section id="reviews" style="background-color: #f1f5f9; padding: 70px 5%; text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.3rem; color: #0f172a; margin-bottom: 10px;">
-                Client Journeys & Experiences
-            </h2>
-            <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 40px;">
-                Read what international and domestic travelers say about their luxury tours with Yavora
-            </p>
-
-            <!-- Reviews Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left; margin-bottom: 40px;">
-                
-                <!-- Review Card 1 -->
-                <div style="background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); position: relative; border-top: 4px solid #d4af37;">
-                    <div style="color: #d4af37; margin-bottom: 15px; font-size: 1rem;">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p style="font-size: 0.95rem; color: #334155; font-style: italic; margin-bottom: 20px; line-height: 1.6;">
-                        "Yavora arranged an absolute royal tour for us across Jaipur and Agra. The heritage hotels and private cab service were top-notch. Truly a classic journey!"
-                    </p>
-                    <h4 style="font-family: 'Playfair Display', serif; color: #0f172a; font-size: 1.1rem; margin: 0;">Marcus & Elena</h4>
-                    <span style="font-size: 0.8rem; color: #64748b;">Travelers from Germany</span>
-                </div>
-
-                <!-- Review Card 2 -->
-                <div style="background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); position: relative; border-top: 4px solid #d4af37;">
-                    <div style="color: #d4af37; margin-bottom: 15px; font-size: 1rem;">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p style="font-size: 0.95rem; color: #334155; font-style: italic; margin-bottom: 20px; line-height: 1.6;">
-                        "The Kashmir trip organized by Yavora was breathtaking. From luxury houseboats to expert guides, everything was managed with absolute perfection."
-                    </p>
-                    <h4 style="font-family: 'Playfair Display', serif; color: #0f172a; font-size: 1.1rem; margin: 0;">Dr. Rajesh Sharma</h4>
-                    <span style="font-size: 0.8rem; color: #64748b;">Traveler from Mumbai</span>
-                </div>
-
-                <!-- Review Card 3 -->
-                <div style="background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); position: relative; border-top: 4px solid #d4af37;">
-                    <div style="color: #d4af37; margin-bottom: 15px; font-size: 1rem;">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p style="font-size: 0.95rem; color: #334155; font-style: italic; margin-bottom: 20px; line-height: 1.6;">
-                        "Gurugram and Jaipur roots mean local expertise with global standards. Their VIP tour package exceeded all our expectations."
-                    </p>
-                    <h4 style="font-family: 'Playfair Display', serif; color: #0f172a; font-size: 1.1rem; margin: 0;">Sophie Laurent</h4>
-                    <span style="font-size: 0.8rem; color: #64748b;">Traveler from France</span>
-                </div>
-
-            </div>
-
-            <!-- Share Review Button -->
-            <a href="https://wa.me/919352149065?text=Hello%20Yavora%20Tours,%20I%20want%20to%20share%20my%20review%20regarding%20my%20travel%20experience:" target="_blank" style="display: inline-block; background-color: #0f172a; color: #ffffff; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                <i class="fa-solid fa-pen-nib" style="color: #d4af37; margin-right: 8px;"></i> Share Your Review via WhatsApp
-            </a>
-        </div>
-    </section>
-    <!-- Yavora Testimonials & Reviews Section End -->
-        
         <div class="footer-content">
             <div class="footer-col">
                 <h3>Yavora Tours & Travels</h3>
@@ -853,6 +922,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#tiers">Tour Tiers</a></li>
                     <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#about">About Us</a></li>
                 </ul>
             </div>
@@ -869,6 +939,71 @@
     </footer>
 
     <script type="text/javascript">
+        // Load saved reviews on page load
+        window.onload = function() {
+            let savedReviews = JSON.parse(localStorage.getItem('yavora_reviews')) || [];
+            let container = document.getElementById('reviewsContainer');
+            savedReviews.forEach(rev => {
+                let card = document.createElement('div');
+                card.className = 'review-card';
+                card.innerHTML = `
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"${rev.text}"</p>
+                    <h4>${rev.name}</h4>
+                    <span>Traveler from ${rev.country}</span>
+                `;
+                container.appendChild(card);
+            });
+        };
+
+        function handleReviewSubmit(event) {
+            event.preventDefault();
+            let name = document.getElementById('reviewName').value;
+            let country = document.getElementById('reviewCountry').value;
+            let text = document.getElementById('reviewText').value;
+
+            let newReview = { name, country, text };
+            
+            // Save to LocalStorage
+            let savedReviews = JSON.parse(localStorage.getItem('yavora_reviews')) || [];
+            savedReviews.push(newReview);
+            localStorage.setItem('yavora_reviews', JSON.stringify(savedReviews));
+
+            // Append to UI immediately
+            let container = document.getElementById('reviewsContainer');
+            let card = document.createElement('div');
+            card.className = 'review-card';
+            card.innerHTML = `
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p>"${text}"</p>
+                <h4>${name}</h4>
+                <span>Traveler from ${country}</span>
+            `;
+            container.appendChild(card);
+
+            // Show notice & reset form
+            let notice = document.getElementById('review-notice');
+            notice.style.display = 'block';
+            document.getElementById('reviewForm').reset();
+
+            setTimeout(() => {
+                notice.style.display = 'none';
+                document.getElementById('reviews').scrollIntoView({ behavior: 'smooth' });
+            }, 2500);
+        }
+
         function scrollToInquiry() {
             document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
         }
@@ -916,4 +1051,4 @@
 </body>
 </html>
 
-        
+    
